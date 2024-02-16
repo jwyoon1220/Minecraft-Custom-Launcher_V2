@@ -1,17 +1,12 @@
-﻿using MetroFramework.Forms;
-using CmlLib.Core;
+﻿using CmlLib.Core;
 using System;
 using CmlLib.Core.Auth.Microsoft;
 using CmlLib.Core.Installer.FabricMC;
-using System.Runtime.CompilerServices;
-using CmlLib.Core.Version;
 using System.Windows.Forms;
-using CmlLib.Core.Auth;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Minecraft_Launcher
 {
-    public partial class Form1 : MetroForm
+    public partial class Form1 : Form
     {
         
 
@@ -38,6 +33,7 @@ namespace Minecraft_Launcher
             {
                 metroComboBox1.Items.Add(v.Name);
             }
+           
         }
 
      
@@ -55,10 +51,7 @@ namespace Minecraft_Launcher
             
             launcher.FileChanged += (e) =>
             {
-                metroLabel4.Text = ("파일종류: " + e.FileKind.ToString());
-                metroLabel5.Text = ("파일이름: " + e.FileName);
-                metroLabel6.Text = ("진행한 파일 수: " + e.ProgressedFileCount + " / " + e.TotalFileCount);
-                metroLabel3.Text = ("총 파일 수: " + e.TotalFileCount);
+                
                 
             };
 
@@ -94,7 +87,8 @@ namespace Minecraft_Launcher
             }
         }
 
-    
+
+
        
     }
 }
